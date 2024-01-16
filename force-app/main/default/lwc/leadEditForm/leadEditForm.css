@@ -1,0 +1,15 @@
+.table-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0.8rem;
+}
+
+.link-data {
+    color: #1aa2b0;
+    text-decoration: underline
+}
+.estimate-field {
+    padding-left: 4px;
+    padding-right: 4px;
+}

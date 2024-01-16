@@ -1,0 +1,23 @@
+<template >
+    <lightning-modal-header label="Charge Guidance on HMRC Reply" size="full"></lightning-modal-header>
+    <template if:true={isExistChargeProductName}>
+        <lightning-modal-body class="slds-text-body_regular slds-m-bottom_medium" size="full">
+            <div>Are you sure to charge <b>{chargeProductName}</b> Product? </div>
+            <div style="margin-top:0.5rem"><b>Amount: </b> {chargeAmount}</div>
+        </lightning-modal-body>
+    </template>
+    <template if:true={isExistErrorData}>
+        <lightning-modal-body style="color:red" size="full">
+            {errorData}
+        </lightning-modal-body>
+    </template>
+    <lightning-modal-footer class="slds-m-top_small slds-m-bottom_medium" size="full">
+        <lightning-button variant="brand-outline" label="Cancel" onclick={closeModal} class="slds-m-right_xx-small"></lightning-button>
+        <lightning-button variant="brand" label="Charge" onclick={handleCharge} disabled={isExistErrorData}></lightning-button>
+    </lightning-modal-footer>
+    <template if:true={showSpinner}>
+        <div class="slds-modal__content modalBodySpinner">
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+    </template>
+</template>
